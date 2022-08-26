@@ -1,0 +1,2 @@
+include src/ouidxpy/*.txt
+include src/ouidxpy/*.csv

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ouidxpy"
+version = "0.0.1"
+authors = [
+  {name="Yubin Park", email="yubin.park@gmail.com"},
+]
+description = "Overuse Index adopted from Johns Hopkins Research"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["one", "two"]
+license = {text = "BSD 3-Clause License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/yubin-park/ouidxpy"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages]
+find = {}  # Scan the project directory with the default parameters
+
