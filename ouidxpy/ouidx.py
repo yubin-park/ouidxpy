@@ -1,12 +1,15 @@
 import csv
 from collections import defaultdict
+from dateutil.parser import parse
+from pkg_resources import resource_filename as rscfn
+from ouidxpy.idx_logics import *
 
 class Ouidx:
 
     def __init__(self):
         
         cpts = defaultdict(list)
-        with open("cpt.csv", "r") as fp:
+        with open(rscfn("ouidxpy", "cpt.csv"), "r") as fp:
             reader = csv.reader(fp)
             header = next(reader)
             for row in reader:
@@ -17,7 +20,7 @@ class Ouidx:
                 cpts[d["oid"]].append(d)
         
         icd10pcs = defaultdict(list)
-        with open("icd10pcs.csv", "r") as fp:
+        with open(rscfn("ouidxpy", "icd10pcs.csv"), "r") as fp:
             reader = csv.reader(fp)
             header = next(reader)
             for row in reader:
@@ -29,7 +32,7 @@ class Ouidx:
                 icd10pcs[d["oid"]].append(d)
         
         icd10cm = defaultdict(list)
-        with open("icd10cm.csv", "r") as fp:
+        with open(rscfn("ouidxpy", "icd10cm.csv"), "r") as fp:
             reader = csv.reader(fp)
             header = next(reader)
             for row in reader:
@@ -47,7 +50,8 @@ class Ouidx:
                 icd10cm[d["oid"]].append(d)
 
         defs = {}
-        with open("definitions.csv", "r", encoding="ISO-8859-1") as fp:
+        with open(rscfn("ouidxpy", "definitions.csv"), "r", 
+                    encoding="ISO-8859-1") as fp:
             reader = csv.reader(fp)
             header = next(reader)
             for row in reader:
@@ -73,17 +77,11 @@ class Ouidx:
             "event_setting": "ip" # "op", "ed", "other"
             }, ...]
         """
+        out = defaultdict(list)
+
+        out["1"] = idx1(claims, self.cpts, self.icd10pcs, self.icd10cm)
         
-        # Idx 1
-        for claim in claims:
-            # detect "op" and having the cpt or icd10_pcs and inclusion dx
-            # go back 180 days window
-            # find claims with exclusion dx => if none, then OU
-            break
-
-        # Idx 2
-
-        return {}
+        return out
 
 
 if __name__ == "__main__":
