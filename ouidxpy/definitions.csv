@@ -1,0 +1,203 @@
+ Number,Name of Indicator,Motivator,Indicators in Prose,Operational Considerations,Setting of Indicator Event
+1,Preoperative chest radiography in the absence of a clinical suspicion for intrathoracic pathology,"Motivator: this is of little clinical value and leads to cascades of harm
+
+
+",Indicator: use of preoperative chest xray in people without symptoms or history of lung disease,Procedure code is associated with the Inclusionary diagnsosis code(same claim) with NO exclusionary diagnosis codes within 180 days preceding procedure code,Outpatient only; No inpatient and no ED
+2,"Imaging in acute foot trauma
+
+","Motivator: Ottowa rules work very well.  Where they do not apply, plain film radiography is the first appropriate study.
+
+","Indicator: Use of any imaging ASIDE from plain radiography in the setting of acute foot trauma (i.e. CT, MRI)","Inclusionary diagnosis on the same claim as the CPT code and no exclusionary code (same code) in the preceding 30 days, restrict to age over 5 years",Inpatient or outpatient (including ED)
+3,MRI in individuals with mild traumatic brain injury,"Motivator:  patients with mild TBI are unlikely to have a brain hemorrhage 
+
+",Indicator:  brain MRI in individuals presenting with mild TBI,Procedure code is associated with the inclusionary diagnosis code (same claim) seen in an ED or outpatient setting; NOT APPLICABLE TO INPATIENTS,Outpatient (including ED); not inpatient
+4,Don’t order sinus computed tomography (CT) for uncomplicated acute rhinosinusitis.,"Motivator: sinus CT adds little information that will change management of acute sinusitis 
+",Indicator: Sinus CT in patients with acute sinusitis without a history of chronic sinusitis,Procedure code is associated with an inclusionary diagnosis code (same claim)  AND  no exclusionary diagnosis code in preceding 180 days,Inpatient or outpatient (including ED)
+5,Abdomen CT use of contrast material (w and w/o),"Motivator: If one has the results of an abdominal CT with contrast, there is no added information on doing and billing for one without contrast
+",Indicator: abdominal CTs on the same day with and without contrast,ICD-10-PCS codes or  CPT code (w and without)   OR  CPT code for w/ and CPT for w/o on same day,Inpatient or outpatient (including ED)
+7,MRI Lumbar Spine for Low Back Pain,"Motivator: MRI’s are used too early and too often for mechanical low back pain; they are only indicated when there are red flags or radicular symptoms where there might be need for intervention
+
+
+
+",Indicator: MRI for lumbar spine in the absence of red flag conditions or in the absence of neuropathy as known from radicular pain or lower extremity weakness.,Procedure code is associated with inclusionary code  (same claim) AND absence of exclusionary codes in preceding 60 days,Outpatient only (including ED)
+8,Traction for low back pain,"Motivator: traction has little evidence base for low back pain treatment.
+
+
+",Indicator: use of traction among patients with low back pain,Procedure code is associated with with inclusionary diagnosis code (same claim) ,Inpatient or outpatient (including ED)
+9,Hysterectomy for benign disease,"Motivator: there are too many hysterectomies performed for benign disease that could be managed more conservatively
+
+","Indicator: Hysterectomy performed for an indication other than a cancer diagnosis of a pelvic organ (ovary, uterus, peritoneum, cervix, bladder).",Procedure code is NOT associated with an exclusionary diagnosis code (same claim).,Inpatient or outpatient (including ED)
+10,Laminectomy and/or spinal fusion,"Motivator: there are too many lumbar laminectomies done for back pain; they largely should never happen except for radicular pain or weakness.
+
+",Indicator:   Lumbar laminectomy or spinal fusion in the absence of neuropathy as known from radicular pain or lower extremity weakness.,Procedure code with NO exclusionary diagnosis within preceding 60 days,Inpatient or outpatient (including ED)
+11,Meniscectomy in patients with DJD of the knee,Motivator: partial meniscectomy or meniscus repair or placement of an artificial meniscus have little value in patients with DJD of the knee                                                                                                                                                                                                                                                                                                                             ,Indicator: use of meniscectomy in a population of patients with DJD       ,Procedure code with inclusionary diagnosis code in preceding 60 days and with NO exclusionary code on associated with the procedure (same claim).,Inpatient or outpatient (including ED)
+12,Nasal endoscopy for sinusitis diagnosis,"Motivator:  patients with acute sinusitis should not be rushed to nasal endoscopy; this would only be indicated for chronic sinusitis
+
+
+
+",Indicator: Nasal endoscopy in patients with acute sinusitis without a history of chronic sinusitis,Inclusionary diagnosis code is associated with the procedure code (same claim)  AND  no exclusionary diagnosis code in preceding 180 days,Outpatient only; No inpatient and no ED
+13,Use of routine cervical cytology (Pap tests) in women over 65 years,Motivator: there is no reduction in morbidity and mortality with cervical cancer screening in women at low risk of cervical cancer ,Indicator:  PAP smears seen in consecutive years among women over 65 years AND diagnosis of screening ,Procedure code with inclusionary diagnosis code (same claim) and person is 65 years or older,Outpatient only; No inpatient and no ED
+14,Screening mammography in women 85 years and older,Motivator: women over age 85 have slowly growing cancers and do not benefit form screening given short life expectancy                                                                                                                                                    ,Indicator: mammography in women 85 years and older AND a diagnosis of screening for breast cancer    ,Procedure code with inclusionary diagnosis code (same claim) and person is 85 years or older,Outpatient only; No inpatient and no ED
+15,Screening for colorectal cancer in adults 80 years and older,Motivator: patients with expected longevity of less than 10 years do not benefit from screening for colon cancer                                             ,"Indicator: colonoscopy, sigmoidoscopy, with the indication of screening in patients above age 80 years AND a diagnosis of colon cancer screening  ",Procedure code with inclusionary diagnosis code (same claim) AND person is 80 years or above,Outpatient only; No inpatient and no ED
+16,Screening for asymptomatic carotid artery stenosis (CAS) in individuals over age 80 years,"Motivator: screening asymptomatic patients has not been demonstrated to prevent stroke
+
+
+
+",Indicator: use of coronary artery ultrasonography in people without symptoms attributable to coronary artery stenosis (largely stroke or TIA),Procedure code with no exclusionary diagnosis within preceding 180 days,Outpatient only; No inpatient and no ED
+17,Routine monitoring of digoxin in patients with congestive heart failure,"Motivator: digoxin monitoring should not be done routinely; it should only be done if there is concern about digoxin toxicity 
+
+ ",Indicator:  digoxin concentration measurement (blood test),Procedure code is associated with the inclusionarey diagnosis cade (same claim) and exclusionary diagnosis code is NOT associated with the procedure code (same claim),Inpatient or outpatient (including ED)
+18,EEG monitoring in individuals presenting with syncope,"Motivator: this seldom yields a diagnosis of seizures in this population
+
+",Indicator: EEG monitoring during the hospitalization or observation unit stay of a patient with a diagnosis of syncope,Procedure code is associated with an inclusionary diagnosis code (same claim) or same admission (with  diagnosis),Inpatient only 
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,

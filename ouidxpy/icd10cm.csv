@@ -1,0 +1,65 @@
+Working Number,Indicator ,Inclusionary,Exclusionary,ICD-10-CM
+1,Lung dx,,x,J00-J06
+1,Lung dx,,x,J09-J18
+1,Lung dx,,x,J20-J22
+1,Lung dx,,x,J30-J39
+1,Lung dx,,x,J40-J47
+1,Lung dx,,x,J60-J70
+1,Lung dx,,x,J80-J84
+1,Lung dx,,x,J85-J86
+1,Lung dx,,x,J90-J94
+1,Preoperative evaluation,x,,Z01.81 preprocedural visit
+2,Foot trauma,x,x,S90-S99
+3,Mild TBI,x,,"S06.0X0A (concussion w/o LOC, initial encounter) "
+3,Mild TBI,x,,"S06.0X1A (concussion w/LOC of 30 mins or less, initial encounter)"
+3,Mild TBI,x,,"S06.0X9A (concussion w/LOC of unspecified duration, initial encounter)"
+4,Acute Sinusitis diagnosis,x,,"J01.00 Acute maxillary sinusitis, unspecified"
+4,Acute Sinusitis diagnosis,x,,"J01.10 Acute frontal sinusitis, unspecified"
+4,Acute Sinusitis diagnosis,x,,"J01.20 Acute ethmoidal sinusitis, unspecified"
+4,Acute Sinusitis diagnosis,x,,"J01.30 Acute sphenoidal sinusitis, unspecified"
+4,Acute Sinusitis diagnosis,x,,"J01.40 Acute pansinusitis, unspecified"
+4,Acute Sinusitis diagnosis,x,,"J01.90 Acute sinusitis, unspecified"
+4,Chronic Sinusitis diagnosis,,x,J32.0 Chronic maxillary sinusitis
+4,Chronic Sinusitis diagnosis,,x,J32.1 Chronic frontal sinusitis
+4,Chronic Sinusitis diagnosis,,x,J32.2 Chronic ethmoidal sinusitis
+4,Chronic Sinusitis diagnosis,,x,J32.3 Chronic sphenoidal sinusitis
+4,Chronic Sinusitis diagnosis,,x,J32.4 Chronic pansinusitis
+4,Chronic Sinusitis diagnosis,,x,J32.8 Other chronic sinusitis
+4,Chronic Sinusitis diagnosis,,x,"J32.9 Chronic sinusitis, unspecified"
+9,Malignancy - pelvic organs,,x,"C53-C56 Malignancies of cervix, ovary, uterus"
+10,Radicular symptoms,,x,M54.3
+10,Radicular symptoms,,x,M54.4
+10,Low back pain (dx or symptions),x,,M54.5 Low back pain
+10,Red flag condition for low back pain,,x,C00-C96 although not C44 (malignancies)
+10,Red flag condition for low back pain,,x,M46.2 through M46.5 osteomyelitis of spine
+10,Red flag condition for low back pain,,x,S34 trauma to spine
+11,DJD,x,,M17   knee osteoarthritis
+11,Knee trauma,,x,V00-W19 trauma
+13,Screening for cervical cancer ,x,,Z12.4 screening for cervical cancer
+13,Screening for cervical cancer ,x,,Z11.51 screening for HPV
+13,Cervical atypia,,x,C53  Malignancies of cervix
+13,Cervical atypia,,x,N87  Cervical dysplasia
+14,Screening for breast cancer,x,,Z12.31 screening for breast cancer
+15,Screening for colon cancer,x,,Z12.11 screening for colon cancer
+16,Dx or symptoms attributable to carotid artery stenosis ,,x,I63-I69 inclusive of everything after the periods
+16,Dx or symptoms attributable to carotid artery stenosis ,,x,R55 Syncope and collapse
+17,Congestive heart failure ,x,,I50 (with anything after the period)
+17,Digoxin toxicity,,x,T46.0X1
+17,Digoxin toxicity,,x,T46.0X2
+17,Digoxin toxicity,,x,T46.0X3
+17,Digoxin toxicity,,x,T46.0X4
+17,Digoxin toxicity,,x,T46.0X5
+18,Syncope ,x,,R55.9 Syncope and collapse
+12,Acute Sinusitis diagnosis,x,,"J01.00 Acute maxillary sinusitis, unspecified"
+12,Acute Sinusitis diagnosis,x,,"J01.10 Acute frontal sinusitis, unspecified"
+12,Acute Sinusitis diagnosis,x,,"J01.20 Acute ethmoidal sinusitis, unspecified"
+12,Acute Sinusitis diagnosis,x,,"J01.30 Acute sphenoidal sinusitis, unspecified"
+12,Acute Sinusitis diagnosis,x,,"J01.40 Acute pansinusitis, unspecified"
+12,Acute Sinusitis diagnosis,x,,"J01.90 Acute sinusitis, unspecified"
+12,Chronic Sinusitis diagnosis,,x,J32.0 Chronic maxillary sinusitis
+12,Chronic Sinusitis diagnosis,,x,J32.1 Chronic frontal sinusitis
+12,Chronic Sinusitis diagnosis,,x,J32.2 Chronic ethmoidal sinusitis
+12,Chronic Sinusitis diagnosis,,x,J32.3 Chronic sphenoidal sinusitis
+12,Chronic Sinusitis diagnosis,,x,J32.4 Chronic pansinusitis
+12,Chronic Sinusitis diagnosis,,x,J32.8 Other chronic sinusitis
+12,Chronic Sinusitis diagnosis,,x,"J32.9 Chronic sinusitis, unspecified"

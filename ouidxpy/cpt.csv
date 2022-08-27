@@ -1,0 +1,147 @@
+Working Number,Indicator ,CPT,CPT Description
+1,Radiology codes,71045,"Radiologic examination, chest, single view, frontal"
+1,Radiology codes,71046,"Radiologic examination, chest, two views, frontal and lateral"
+2,Imaging of foot in trauma,73700,CT lower ext
+2,Imaging of foot in trauma,73701,CT  lower ext
+2,Imaging of foot in trauma,73702,CT lower ext
+2,Imaging of foot in trauma,73718,MRI foot (non joint)
+3,MRI,70551,MRI brain stem w/o dye
+3,MRI,70552,MRI brain stem w/dye
+3,MRI,70553,MRI brain stem w/o & w/dye
+4,Sinus CT,70486,CT maxillofacial w/o dye
+4,Sinus CT,70487,CT maxillofacial w/dye
+4,Sinus CT,70488,CT maxillofacial w/o & w/dye
+5,Abdomen CT,74150,CT abdomen w/o dye
+5,Abdomen CT,74160,CT abdomen w/dye
+5,Abdomen CT,74170,CT abdomen w/o & w/dye
+7,MRI Lumbar Spine,72148,MRI lumbar spine w/o dye
+7,MRI Lumbar Spine,72149,MRI lumbar spine w/dye
+7,MRI Lumbar Spine,72158,MRI lumbar spine w/o & w/dye
+8,Traction,97012,Mechanical traction therapy
+8,Traction,97140,Manual therapy 1/> regions
+8,Traction,E0830,Ambulatory traCTion device
+9,Hysterectomy ,58150,Total Hysterectomy
+9,Hysterectomy ,58152,Total Hysterectomy
+9,Hysterectomy ,58180,Partial Hysterectomy
+9,Hysterectomy ,58200,Extensive Hysterectomy
+9,Hysterectomy ,58210,Extensive Hysterectomy
+9,Hysterectomy ,58260,Vaginal Hysterectomy
+9,Hysterectomy ,58262,Vag hyst including t/o
+9,Hysterectomy ,58263,Vag hyst w/t/o & vag repair
+9,Hysterectomy ,58267,Vag hyst w/urinary repair
+9,Hysterectomy ,58270,Vag hyst w/enterocele repair
+9,Hysterectomy ,58275,Hysterectomy/revise vagina
+9,Hysterectomy ,58280,Hysterectomy/revise vagina
+9,Hysterectomy ,58285,Extensive Hysterectomy
+9,Hysterectomy ,58290,Vag hyst complex
+9,Hysterectomy ,58291,Vag hyst incl t/o complex
+9,Hysterectomy ,58292,Vag hyst t/o & repair compl
+9,Hysterectomy ,59293,Vag hyst w/uro repair compl
+9,Hysterectomy ,59294,Vag hyst w/enterocele compl
+9,Hysterectomy ,58541,Lsh uterus 250 g or less
+9,Hysterectomy ,58542,Lsh w/t/o ut 250 g or less
+9,Hysterectomy ,58543,Lsh uterus above 250 g
+9,Hysterectomy ,58544,Lsh w/t/o uterus above 250 g
+9,Hysterectomy ,58548,Lap radical hyst
+9,Hysterectomy ,58550,Laparo-asst vag Hysterectomy
+9,Hysterectomy ,58552,Laparo-vag hyst incl t/o
+9,Hysterectomy ,58553,Laparo-vag hyst complex
+9,Hysterectomy ,58554,Laparo-vag hyst w/t/o compl
+9,Hysterectomy ,58570,Tlh uterus 250 g or less
+9,Hysterectomy ,58571,Tlh w/t/o 250 g or less
+9,Hysterectomy ,58572,Tlh uterus over 250 g
+9,Hysterectomy ,58573,Tlh w/t/o uterus over 250 g
+10,Laminectomy or discectomy,22558,Lumbar spine procedures
+10,Laminectomy or discectomy,22585,Lumbar spine procedures
+10,Laminectomy or discectomy,22612,Lumbar spine procedures
+10,Laminectomy or discectomy,22614,Lumbar spine procedures
+10,Laminectomy or discectomy,22630,Lumbar spine procedures
+10,Laminectomy or discectomy,22632,Lumbar spine procedures
+10,Laminectomy or discectomy,22633,Lumbar spine procedures
+10,Laminectomy or discectomy,22634,Lumbar spine procedures
+10,Laminectomy or discectomy,22699,Lumbar spine procedures
+10,Laminectomy or discectomy,63005,Lumbar spine procedures
+10,Laminectomy or discectomy,63017,Lumbar spine procedures
+10,Laminectomy or discectomy,63030,Lumbar spine procedures
+10,Laminectomy or discectomy,63047,Lumbar spine procedures
+10,Laminectomy or discectomy,63048,Lumbar spine procedures
+11,Meniscectomy,29881,Menisectomy or repair or replacement
+11,Meniscectomy,27332,Menisectomy or repair or replacement
+11,Meniscectomy,27333,Menisectomy or repair or replacement
+11,Meniscectomy,27403,Menisectomy or repair or replacement
+11,Meniscectomy,29868,Menisectomy or repair or replacement
+11,Meniscectomy,29880,Menisectomy or repair or replacement
+11,Meniscectomy,29881,Menisectomy or repair or replacement
+11,Meniscectomy,29882,Menisectomy or repair or replacement
+11,Meniscectomy,29883,Menisectomy or repair or replacement
+12,Nasal endoscopy ,31231,Nasal endoscopy dx
+12,Nasal endoscopy ,31233,Nasal/sinus endoscopy dx
+12,Nasal endoscopy ,31235,Nasal/sinus endoscopy dx
+13,Cervical cancer screening,Q0091,PAP smears
+13,Cervical cancer screening,G0123,PAP smears
+13,Cervical cancer screening,G0143,PAP smears
+13,Cervical cancer screening,G0144,PAP smears
+13,Cervical cancer screening,G0145,PAP smears
+13,Cervical cancer screening,G0146,PAP smears
+13,Cervical cancer screening,G0147,PAP smears
+13,Cervical cancer screening,G0148,PAP smears
+13,Cervical cancer screening,G0476,HPV testing
+14,Screening mammogram,G0202,"Mammogram, screening"
+14,Screening mammogram,77067,"Mammogram, screening - digital"
+14,Screening mammogram,77063,"Mammogram, screening - digital"
+15,Colon screening,45378,colonscopy
+15,Colon screening,45379,colonscopy
+15,Colon screening,45380,colonscopy
+15,Colon screening,45381,colonscopy
+15,Colon screening,45392,colonscopy
+15,Colon screening,45383,colonscopy
+15,Colon screening,45384,colonscopy
+15,Colon screening,45385,colonscopy
+15,Colon screening,45386,colonscopy
+15,Colon screening,45387,colonscopy
+15,Colon screening,45388,colonscopy
+15,Colon screening,45389,colonscopy
+15,Colon screening,45390,colonscopy
+15,Colon screening,45391,colonscopy
+15,Colon screening,45392,colonscopy
+15,Colon screening,45393,colonscopy
+15,Colon screening,45394,colonscopy
+15,Colon screening,45395,colonscopy
+15,Colon screening,45396,colonscopy
+15,Colon screening,45397,colonscopy
+15,Colon screening,45398,colonscopy
+15,Colon screening,G0105,colonscopy
+15,Colon screening,G0121,colonscopy
+15,Colon screening,45330,sigmoidoscopy
+15,Colon screening,45331,sigmoidoscopy
+15,Colon screening,45332,sigmoidoscopy
+15,Colon screening,45333,sigmoidoscopy
+15,Colon screening,45334,sigmoidoscopy
+15,Colon screening,45335,sigmoidoscopy
+15,Colon screening,45336,sigmoidoscopy
+15,Colon screening,45337,sigmoidoscopy
+15,Colon screening,45338,sigmoidoscopy
+15,Colon screening,45339,sigmoidoscopy
+15,Colon screening,45340,sigmoidoscopy
+15,Colon screening,45341,sigmoidoscopy
+15,Colon screening,45342,sigmoidoscopy
+15,Colon screening,45343,sigmoidoscopy
+15,Colon screening,45344,sigmoidoscopy
+15,Colon screening,45345,sigmoidoscopy
+15,Colon screening,45346,sigmoidoscopy
+15,Colon screening,45347,sigmoidoscopy
+15,Colon screening,45348,sigmoidoscopy
+15,Colon screening,45349,sigmoidoscopy
+15,Colon screening,45350,sigmoidoscopy
+15,Colon screening,88305,sigmoidoscopy
+15,Colon screening,G0104,sigmoidoscopy
+16,Carotid imaging ,93880,Extracranial bilat study
+16,Carotid imaging ,3100F,Image test ref carot diam
+17,Routine monitoring of digoxin ,80162,Assay of digoxin total
+18,EEG monitoring ,3650F,EEG ordered rvwd reqstd
+18,EEG monitoring ,95812,EEG 41-60 minutes
+18,EEG monitoring ,95813,EEG over 1 hour
+18,EEG monitoring ,95816,EEG awake and drowsy
+18,EEG monitoring ,95819,EEG awake and asleep
+18,EEG monitoring ,95822,EEG coma or sleep only
+18,EEG monitoring ,95827,EEG all night recording
