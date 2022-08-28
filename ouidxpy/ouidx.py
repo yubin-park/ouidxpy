@@ -2,7 +2,6 @@ import csv
 from collections import defaultdict
 from dateutil.parser import parse
 from pkg_resources import resource_filename as rscfn
-from ouidxpy.idx_logics import *
 
 class Ouidx:
 
@@ -66,6 +65,83 @@ class Ouidx:
         self.icd10cm = icd10cm
         self.defs = defs
 
+    def _idx_logic(self, 
+                oid, 
+                event_settings,
+                min_age,
+                window,
+                claims, 
+                age):
+        
+        # Idx "oid"
+        # Filter age
+        # Match
+        #   - event_setting
+        #   - cpt or icd10_pcs
+        #   - inclusion dx
+        # Check
+        #   - exclusion dx in a specified window
+        # If no exclusion dx, then Over-utilized
+        
+        out = [] 
+
+        if age < min_age:
+            return out
+
+        ref_events = []
+        cpt_target = {x["code"] for x in self.cpts[oid]}
+        icd10_pcs_target = {x["code"] for x in self.icd10pcs[oid]}
+        dx_incl = [(x["start"], x["end"]) for x in self.icd10cm[oid]
+                    if x["include"]]
+        dx_excl = [(x["start"], x["end"]) for x in self.icd10cm[oid]
+                        if x["exclude"]]
+        
+        for claim in claims:
+            es_match = claim.get("event_setting", "") in event_settings
+            proc_match = (any((x in cpt_target) 
+                            for x in claim.get("cpt", [])) or
+                        any((x in icd10_pcs_target)
+                            for x in claim.get("icd10_pcs",[])))
+            dx_match = False
+            for dx in claim.get("icd10_cm", []):
+                if dx_match:
+                    break
+                for dx_range in dx_incl:
+                    if dx_range[0] <= dx <= dx_range[1]:
+                        dx_match = True
+                        break
+            if (es_match and proc_match and dx_match):
+                ref_events.append(claim)
+        
+        dos0 = "1970-01-01"
+        for ref_event in ref_events:
+            # 180 days window before ref_event
+            has_exclusion = False
+            dos_ref = parse(ref_event.get("date_of_service", dos0))
+            for claim in claims:
+                dos_claim = parse(claim.get("date_of_service", dos0))
+                dos_diff = (dos_ref - dos_claim).days
+                within_range = (dos_diff > 0 and dos_diff < window) 
+                if not within_range:
+                    continue
+                dx_match = False
+                for dx in claim.get("icd10_cm", []):
+                    if dx_match:
+                        break
+                    for dx_range in dx_excl:
+                        if dx_range[0] <= dx <= dx_range[1]:
+                            dx_match = True
+                            break
+                if within_range and dx_match: 
+                    has_exclusion = True
+                    print("excluded")
+                    break
+            if not has_exclusion:
+                out.append(ref_event)
+
+        return out
+
+
     def get_idx(self, claims, age=65):
       
         """
@@ -79,13 +155,14 @@ class Ouidx:
         """
         out = defaultdict(list)
 
-        out["1"] = idx1(claims, self.cpts, self.icd10pcs, self.icd10cm)
-        
+        out["1"] = self._idx_logic("1", {"op"}, 0, 180, claims, age)
+        out["2"] = self._idx_logic("2", {"ip", "op", "ed"}, 5, 30, 
+                                    claims, age)
+        out["3"] = self._idx_logic("3", {"op", "ed"}, 0, 0, 
+                                    claims, age)
+
         return out
 
 
-if __name__ == "__main__":
-
-    ouidx = Ouidx()
     
 
