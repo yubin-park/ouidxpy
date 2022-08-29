@@ -30,8 +30,9 @@ Working Number,Indicator ,Inclusionary,Exclusionary,ICD-10-CM
 10,Radicular symptoms,,x,M54.3
 10,Radicular symptoms,,x,M54.4
 10,Low back pain (dx or symptions),x,,M54.5 Low back pain
-10,Red flag condition for low back pain,,x,C00-C96 although not C44 (malignancies)
-10,Red flag condition for low back pain,,x,M46.2 through M46.5 osteomyelitis of spine
+10,Red flag condition for low back pain,,x,C00-C43 although not C44 (malignancies)
+10,Red flag condition for low back pain,,x,C45-C96 although not C44 (malignancies)
+10,Red flag condition for low back pain,,x,M46.2-M46.5 osteomyelitis of spine
 10,Red flag condition for low back pain,,x,S34 trauma to spine
 11,DJD,x,,M17   knee osteoarthritis
 11,Knee trauma,,x,V00-W19 trauma
@@ -63,3 +64,9 @@ Working Number,Indicator ,Inclusionary,Exclusionary,ICD-10-CM
 12,Chronic Sinusitis diagnosis,,x,J32.4 Chronic pansinusitis
 12,Chronic Sinusitis diagnosis,,x,J32.8 Other chronic sinusitis
 12,Chronic Sinusitis diagnosis,,x,"J32.9 Chronic sinusitis, unspecified"
+7,Low Back Pain  ,x,,M54.5 Low back pain
+7,Red flag condition for low back pain,,x,S34 trauma to spine
+7,Red flag condition for low back pain,,x,C00-C43 although not C44 (malignancies)
+7,Red flag condition for low back pain,,x,C45-C96 although not C44 (malignancies)
+7,Red flag condition for low back pain,,x,M46.2-M46.5 osteomyelitis of spine
+8,Low Back Pain  ,x,,M54.5 Low back pain

@@ -69,7 +69,8 @@ class Ouidx:
                 oid, 
                 event_settings,
                 min_age,
-                window,
+                min_dos_diff,
+                max_dos_diff,
                 claims, 
                 age):
         
@@ -97,31 +98,44 @@ class Ouidx:
                         if x["exclude"]]
         
         for claim in claims:
+            
             es_match = claim.get("event_setting", "") in event_settings
-            proc_match = (any((x in cpt_target) 
+            
+            proc_match = False 
+            if oid == "5":
+                proc_match = any((x in icd10_pcs_target) 
+                                for x in claim.get("icd10_pcs",[]))
+                if (("74150" in claim.get("cpt",[]) and 
+                        "74160" in claim.get("cpt",[])) or 
+                    "74170" in claim.get("cpt",[])):
+                    proc_match = True
+            else:
+                proc_match = (any((x in cpt_target) 
                             for x in claim.get("cpt", [])) or
                         any((x in icd10_pcs_target)
                             for x in claim.get("icd10_pcs",[])))
-            dx_match = False
+            
+            dx_match = (len(dx_incl) == 0) # if no dx_incl, then True
             for dx in claim.get("icd10_cm", []):
                 if dx_match:
                     break
                 for dx_range in dx_incl:
-                    if dx_range[0] <= dx <= dx_range[1]:
+                    ndx = len(dx_range[0])
+                    if dx_range[0] <= dx[:ndx] <= dx_range[1]:
                         dx_match = True
                         break
             if (es_match and proc_match and dx_match):
                 ref_events.append(claim)
-        
+         
         dos0 = "1970-01-01"
         for ref_event in ref_events:
-            # 180 days window before ref_event
             has_exclusion = False
             dos_ref = parse(ref_event.get("date_of_service", dos0))
             for claim in claims:
                 dos_claim = parse(claim.get("date_of_service", dos0))
                 dos_diff = (dos_ref - dos_claim).days
-                within_range = (dos_diff > 0 and dos_diff < window) 
+                within_range = (dos_diff >= min_dos_diff and 
+                                dos_diff <= max_dos_diff) 
                 if not within_range:
                     continue
                 dx_match = False
@@ -129,15 +143,15 @@ class Ouidx:
                     if dx_match:
                         break
                     for dx_range in dx_excl:
-                        if dx_range[0] <= dx <= dx_range[1]:
+                        ndx = len(dx_range[0])
+                        if dx_range[0] <= dx[:ndx] <= dx_range[1]:
                             dx_match = True
                             break
                 if within_range and dx_match: 
                     has_exclusion = True
-                    print("excluded")
                     break
             if not has_exclusion:
-                out.append(ref_event)
+                out.append(ref_event.copy())
 
         return out
 
@@ -155,12 +169,22 @@ class Ouidx:
         """
         out = defaultdict(list)
 
-        out["1"] = self._idx_logic("1", {"op"}, 0, 180, claims, age)
-        out["2"] = self._idx_logic("2", {"ip", "op", "ed"}, 5, 30, 
+        out["oid1"] = self._idx_logic("1", {"op"}, 0, 0, 180, claims, age)
+        out["oid2"] = self._idx_logic("2", {"ip", "op", "ed"}, 5, 1, 30, 
                                     claims, age)
-        out["3"] = self._idx_logic("3", {"op", "ed"}, 0, 0, 
+        out["oid3"] = self._idx_logic("3", {"op", "ed"}, 0, 0, 0, 
                                     claims, age)
-
+        out["oid4"] = self._idx_logic("4", {"ip", "op", "ed"}, 
+                                    0, 0, 180, claims, age)
+        out["oid5"] = self._idx_logic("5", {"ip", "op", "ed"}, 0, 0, 0,
+                                    claims, age) 
+        out["oid7"] = self._idx_logic("7", {"op", "ed"}, 0, 0, 60, 
+                                    claims, age) 
+        out["oid8"] = self._idx_logic("8", {"ip", "op", "ed"}, 0, 0, 0,
+                                    claims, age) 
+        out["oid9"] = self._idx_logic("9", {"ip", "op", "ed"}, 0, 0, 0,
+                                    claims, age) 
+ 
         return out
 
 
