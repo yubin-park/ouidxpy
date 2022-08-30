@@ -168,10 +168,15 @@ class Ouidx:
             }, ...]
         """
         out = defaultdict(list)
-
+        
+        # NOTE: If no min age, put 0 on the age variable.
         out["oid1"] = self._idx_logic("1", {"op"}, 0, 0, 180, claims, age)
+        # NOTE: For Oid=2, exclusion dx gets applied to the claims 
+        #   a day before the target event. This may create some 
+        #   discrepancies with the original implementation.
         out["oid2"] = self._idx_logic("2", {"ip", "op", "ed"}, 5, 1, 30, 
                                     claims, age)
+        # NOTE: If no exclusion dx, we give (0, 0) on the dos_diff pair.
         out["oid3"] = self._idx_logic("3", {"op", "ed"}, 0, 0, 0, 
                                     claims, age)
         out["oid4"] = self._idx_logic("4", {"ip", "op", "ed"}, 
@@ -184,6 +189,32 @@ class Ouidx:
                                     claims, age) 
         out["oid9"] = self._idx_logic("9", {"ip", "op", "ed"}, 0, 0, 0,
                                     claims, age) 
+        out["oid10"] = self._idx_logic("10", {"ip", "op", "ed"}, 0, 0, 60,
+                                    claims, age) 
+        out["oid11"] = self._idx_logic("11", {"ip", "op", "ed"}, 0, 0, 60,
+                                    claims, age) 
+        out["oid12"] = self._idx_logic("12", {"op"}, 0, 0, 180,
+                                claims, age) 
+        # NOTE: The SAS script doesn't address the exclusion Dx for Oid=13.
+        #   We apply those with the same DoS.
+        out["oid13"] = self._idx_logic("13", {"op"}, 65, 0, 0,
+                                    claims, age) 
+        out["oid14"] = self._idx_logic("14", {"op"}, 85, 0, 0,
+                                    claims, age) 
+        out["oid15"] = self._idx_logic("15", {"op"}, 80, 0, 0,
+                                    claims, age) 
+        out["oid16"] = self._idx_logic("16", {"op"}, 0, 0, 180,
+                                    claims, age) 
+        out["oid17"] = self._idx_logic("17", {"ip", "op"}, 0, 0, 0,
+                                    claims, age) 
+        out["oid18"] = self._idx_logic("18", {"ip"}, 0, 0, 0,
+                                    claims, age) 
+
+        oid_score = 0
+        for oid, v in out.items():
+            oid_score += len(v)
+
+        out["score"] = oid_score
  
         return out
 
