@@ -83,8 +83,10 @@ class Ouidx:
         # Check
         #   - exclusion dx in a specified window
         # If no exclusion dx, then Over-utilized
-        
-        out = [] 
+        out = {"oid": oid,
+                "name": self.defs[oid]["name"],
+                "motivator": self.defs[oid]["motivator"],
+                "evidence": [], "cnt": 0}
 
         if age < min_age:
             return out
@@ -150,11 +152,12 @@ class Ouidx:
                 if within_range and dx_match: 
                     has_exclusion = True
                     break
+            
             if not has_exclusion:
-                out.append(ref_event.copy())
+                out["evidence"].append(ref_event.copy())
 
+        out["cnt"] = len(out["evidence"])
         return out
-
 
     def get_idx(self, claims, age=65):
       
@@ -167,7 +170,7 @@ class Ouidx:
             "event_setting": "ip" # "op", "ed", "other"
             }, ...]
         """
-        out = defaultdict(list)
+        out = {}
         
         # NOTE: If no min age, put 0 on the age variable.
         out["oid1"] = self._idx_logic("1", {"op"}, 0, 0, 180, claims, age)
@@ -211,8 +214,8 @@ class Ouidx:
                                     claims, age) 
 
         oid_score = 0
-        for oid, v in out.items():
-            oid_score += len(v)
+        for oid in out.keys():
+            oid_score += out[oid]["cnt"]
 
         out["score"] = oid_score
  

@@ -13,7 +13,7 @@ class TestOuidx(unittest.TestCase):
                     {"date_of_service": "2022-01-01",
                     "icd10_cm": ["J00"]}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid1"]), 0)
+        self.assertEqual(res["oid1"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -22,7 +22,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}]
 
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid1"]), 1)
+        self.assertEqual(res["oid1"]["cnt"], 1)
     
     def test_idx2(self):
          
@@ -35,7 +35,7 @@ class TestOuidx(unittest.TestCase):
                     {"date_of_service": "2022-05-10",
                     "icd10_cm": ["S90"]}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid2"]), 0)
+        self.assertEqual(res["oid2"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -43,7 +43,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["S90"], 
                     "event_setting": "ed"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid2"]), 1)
+        self.assertEqual(res["oid2"]["cnt"], 1)
 
     def test_idx3(self):
         
@@ -54,7 +54,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["S06"], 
                     "event_setting": "ed"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid3"]), 0)
+        self.assertEqual(res["oid3"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -62,7 +62,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["S060X0A"], 
                     "event_setting": "ed"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid3"]), 1)
+        self.assertEqual(res["oid3"]["cnt"], 1)
  
     def test_idx4(self):
         oi = Ouidx()
@@ -74,7 +74,7 @@ class TestOuidx(unittest.TestCase):
                     {"date_of_service": "2022-01-01",
                     "icd10_cm": ["J320"]}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid3"]), 0)
+        self.assertEqual(res["oid3"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -82,7 +82,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["J0100"], 
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid4"]), 1)
+        self.assertEqual(res["oid4"]["cnt"], 1)
     
     def test_idx5(self):
         oi = Ouidx()
@@ -93,7 +93,7 @@ class TestOuidx(unittest.TestCase):
                     {"date_of_service": "2022-01-01",
                     "icd10_cm": ["J320"]}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid5"]), 0)
+        self.assertEqual(res["oid5"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -101,7 +101,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["J0100"], 
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid5"]), 1)
+        self.assertEqual(res["oid5"]["cnt"], 1)
         
     def test_idx7(self):
         oi = Ouidx()
@@ -113,7 +113,7 @@ class TestOuidx(unittest.TestCase):
                     {"date_of_service": "2022-05-01",
                     "icd10_cm": ["C45"]}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid7"]), 0)
+        self.assertEqual(res["oid7"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -123,7 +123,7 @@ class TestOuidx(unittest.TestCase):
                     {"date_of_service": "2022-05-01",
                     "icd10_cm": ["C44"]}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid7"]), 1)
+        self.assertEqual(res["oid7"]["cnt"], 1)
  
     def test_idx8(self):
         oi = Ouidx()
@@ -132,7 +132,7 @@ class TestOuidx(unittest.TestCase):
                     "cpt": ["97012"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid8"]), 0)
+        self.assertEqual(res["oid8"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -140,7 +140,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["M545"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid8"]), 1)
+        self.assertEqual(res["oid8"]["cnt"], 1)
  
     def test_idx9(self):
         oi = Ouidx()
@@ -150,7 +150,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["C54"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid9"]), 0)
+        self.assertEqual(res["oid9"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -158,7 +158,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["M545"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid9"]), 1)
+        self.assertEqual(res["oid9"]["cnt"], 1)
  
     def test_idx10(self):
         oi = Ouidx()
@@ -172,7 +172,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}
                     ]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid10"]), 0)
+        self.assertEqual(res["oid10"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -180,7 +180,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["M545"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid10"]), 1)
+        self.assertEqual(res["oid10"]["cnt"], 1)
  
     def test_idx11(self):
         oi = Ouidx()
@@ -194,7 +194,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}
                     ]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid11"]), 0)
+        self.assertEqual(res["oid11"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -202,7 +202,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["M17"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid11"]), 1)
+        self.assertEqual(res["oid11"]["cnt"], 1)
 
     def test_idx12(self):
         oi = Ouidx()
@@ -216,7 +216,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}
                     ]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid12"]), 0)
+        self.assertEqual(res["oid12"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -224,7 +224,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["J0110"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims)
-        self.assertEqual(len(res["oid12"]), 1)
+        self.assertEqual(res["oid12"]["cnt"], 1)
     
     def test_idx13(self):
         oi = Ouidx()
@@ -238,7 +238,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}
                     ]
         res = oi.get_idx(claims, 65)
-        self.assertEqual(len(res["oid13"]), 0)
+        self.assertEqual(res["oid13"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -246,7 +246,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["Z1151"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 66)
-        self.assertEqual(len(res["oid13"]), 1)
+        self.assertEqual(res["oid13"]["cnt"], 1)
  
     def test_idx14(self):
         oi = Ouidx()
@@ -256,7 +256,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["Z1231"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 65)
-        self.assertEqual(len(res["oid14"]), 0)
+        self.assertEqual(res["oid14"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -264,7 +264,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["Z1231"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 86)
-        self.assertEqual(len(res["oid14"]), 1)
+        self.assertEqual(res["oid14"]["cnt"], 1)
  
     def test_idx15(self):
         oi = Ouidx()
@@ -274,7 +274,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["Z1211"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 65)
-        self.assertEqual(len(res["oid15"]), 0)
+        self.assertEqual(res["oid15"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -282,7 +282,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["Z1211"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 81)
-        self.assertEqual(len(res["oid15"]), 1)
+        self.assertEqual(res["oid15"]["cnt"], 1)
     
     def test_idx16(self):
         oi = Ouidx()
@@ -295,14 +295,14 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}
                     ]
         res = oi.get_idx(claims, 65)
-        self.assertEqual(len(res["oid16"]), 0)
+        self.assertEqual(res["oid16"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
                     "cpt": ["3100F"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 81)
-        self.assertEqual(len(res["oid16"]), 1)
+        self.assertEqual(res["oid16"]["cnt"], 1)
  
     def test_idx17(self):
         oi = Ouidx()
@@ -316,7 +316,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "op"}
                     ]
         res = oi.get_idx(claims, 65)
-        self.assertEqual(len(res["oid17"]), 0)
+        self.assertEqual(res["oid17"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -324,7 +324,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["I50"],
                     "event_setting": "op"}]
         res = oi.get_idx(claims, 81)
-        self.assertEqual(len(res["oid17"]), 1)
+        self.assertEqual(res["oid17"]["cnt"], 1)
  
     def test_idx18(self):
         oi = Ouidx()
@@ -334,7 +334,7 @@ class TestOuidx(unittest.TestCase):
                     "event_setting": "ip"}
                     ]
         res = oi.get_idx(claims, 65)
-        self.assertEqual(len(res["oid17"]), 0)
+        self.assertEqual(res["oid17"]["cnt"], 0)
         
         # overuse case
         claims = [{"date_of_service": "2022-06-01",
@@ -342,7 +342,7 @@ class TestOuidx(unittest.TestCase):
                     "icd10_cm": ["R559"],
                     "event_setting": "ip"}]
         res = oi.get_idx(claims, 81)
-        self.assertEqual(len(res["oid18"]), 1)
+        self.assertEqual(res["oid18"]["cnt"], 1)
 
 
  
