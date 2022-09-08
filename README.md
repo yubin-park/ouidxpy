@@ -4,11 +4,12 @@ Overuse Index Python version
 
 This project is based on [Overuse-Index-Segal-et-al-Johns-Hopkins-University-ICD-10-Coding](https://github.com/susanmhutfless/Overuse-Index-Segal-et-al-Johns-Hopkins-University-ICD-10-Coding).
 
-I made it usable as a Python library with some assumptions.
+I ported it as a Python library with a few assumptions.
 
 Please contact me if you want to properly use the package.
 
-The implementation is not exactly the same as the paper. Many custom assumptions are baked in, so please use this at your discretion.
+The implementation is not exactly the same as in the paper. 
+Many custom assumptions are baked in, so please use this at your discretion.
 
 ## Install
 
