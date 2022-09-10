@@ -1,2 +1,2 @@
-include src/ouidxpy/*.txt
-include src/ouidxpy/*.csv
+include ouidxpy/*.txt
+include ouidxpy/*.csv
